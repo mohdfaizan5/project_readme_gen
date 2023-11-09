@@ -41,10 +41,18 @@ document.querySelector('form').addEventListener('submit', (event) => {
   // Values
   let projectName = event.target.elements['projectName'].value
   let description = event.target.elements['description'].value
-  let keywords = event.target.elements['keywords'].value
+  let keywords = []
+  document.querySelectorAll('.generated_keywords li')
+    .forEach(key => {
+      keywords.push(key.textContent)
+    })
   let uvp = event.target.elements['uvp'].value
-  let technologies = event.target.elements['technologies'].value
-  let improve = event.target.elements['improve'].value
+  let technologies = []
+  document.querySelectorAll('.generated_tech li')
+    .forEach(key => {
+      technologies.push(key.textContent)
+    })
+  // let improve = event.target.elements['improve'].value
   let eta = event.target.elements['eta'].value
   console.log(projectName, description, keywords, uvp, technologies, improve, eta)
 
@@ -53,10 +61,11 @@ document.querySelector('form').addEventListener('submit', (event) => {
   document.getElementById('popupText').value = final
 
 
-  
+
+
 })
 
-document.querySelector('#copyBtn').addEventListener('click', (event)=>{
+document.querySelector('#copyBtn').addEventListener('click', (event) => {
   var copyText = document.getElementById("popupText");
 
   // Select the text field
@@ -65,6 +74,7 @@ document.querySelector('#copyBtn').addEventListener('click', (event)=>{
 
   // Copy the text inside the text field
   navigator.clipboard.writeText(copyText.value);
+  document.getElementById('copyBtn').innerHTML = 'Copied <i class="ri-file-copy-2-line"></i>'
 })
 
 function myFunction() {
@@ -77,7 +87,7 @@ function myFunction() {
 
   // Copy the text inside the text field
   navigator.clipboard.writeText(copyText.value);
-  
+
   // Alert the copied text
   // alert("Copied the text: " + copyText.value);
 }

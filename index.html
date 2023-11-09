@@ -11,7 +11,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- FavIcon -->
-  <!-- <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon"> -->
+  <link rel="shortcut icon" href="static/undraw_pointer.svg" type="image/svg">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
   <!-- CSS -->
@@ -24,8 +24,9 @@
 <body class="relative">
 
   <main class="flex flex-col items-center">
-    <h1 class="text-4xl font-bold my-10">
-      <img src="static/undraw_pointer.svg" class="inline" alt="">
+    <h1 class="text-4xl font-bold my-10 group cursor-pointer">
+      <img src="static/undraw_pointer.svg" class="inline group-hover:animate-bounce transition-animate duration-300 "
+        alt="">
       BrainStromer
     </h1>
 
@@ -41,8 +42,8 @@
 
       <label for="description">
         <p class="font-medium ">Description</p>
-        <textarea class="border border-slate-300 w-[432px] mb-2.5 rounded-md p-2 min-h-[120px] h-[120px]" name="description" id="" cols="30"
-          rows="10"></textarea>
+        <textarea class="border border-slate-300 w-[432px] mb-2.5 rounded-md p-2 min-h-[120px] h-[120px]"
+          name="description" id="" cols="30" rows="10"></textarea>
       </label>
 
       <label for="keywords">
@@ -62,11 +63,9 @@
 
       <label for="technologies">
         <p class="font-medium">Technologies <sup class="text-[11px] text-blue-600"> use , to seperate keyword</span></p>
-        <input name="technologies" id="tech_input" type="text"
-          class="border border-slate-300 w-[432px] h-[48px] px-2">
+        <input name="technologies" id="tech_input" type="text" class="border border-slate-300 w-[432px] h-[48px] px-2">
       </label>
       <ul class="generated_tech max-w-[432px] flex-wrap my-2 flex justify-start gap-2">
-
       </ul>
 
       <label for="improve">
@@ -76,13 +75,15 @@
 
       <label for="eta">
         <p class="font-medium">ETA's Estimated time of accomplishment?</p>
-        <input required name="eta" type="text" class="border border-slate-300 w-[432px] h-[48px] mb-2">
+        <input required name="eta" id="eta" type="text" class="border border-slate-300 w-[432px] h-[48px] mb-2">
       </label>
 
       <button id="submitBtn"
-        class="bg-black text-md font-medium text-slate-50 px-[12px] h-[42px] min-w-[150px] py-1 rounded-sm">
-        <input type="submit" value="Submit">
-        <i class="ri-arrow-right-up-line"></i>
+        class="bg-black text-md font-medium text-slate-50 px-[12px] h-[42px] min-w-[150px] py-1 rounded-sm group">
+        <input type="submit" class="" value="Submit">
+        <div class="group-hover:animate-pulse inline">
+          <i class="ri-arrow-right-up-line "></i>
+        </div>
       </button>
     </form>
   </main>
@@ -91,13 +92,13 @@
     class="final_results fixed hidden top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white border border-black shadow-2xl w-[500px] h-[550px] text-black p-2 flex flex-col items-center rounded-xl ">
 
     <h2 class="text-2xl font-medium mb-3">Final Markdown</h2>
-    <textarea class="w-[95%] h-[75%] relative border p-2 bg-gray-50 rounded-xl" name="" id="popupText" cols="30" rows="10">
-
+    <textarea class="w-[95%] h-[75%] relative border p-2 bg-gray-50 rounded-xl" name="" id="popupText" cols="30"
+      rows="10">
     </textarea>
-    <i id="close_pop" class="ri-close-fill text-black absolute top-3 right-4 cursor-pointer text-2xl"></i>
+    <i id="close_pop"
+      class="ri-close-fill text-black absolute top-3 right-4 cursor-pointer text-2xl hover:rotate-90 transition-rotate duration-300"></i>
 
     <div class="m-3">
-
       <button id="copyBtn" class="bg-black text-white text-[16px] font-medium py-[8px] px-[16px] rounded-xl">
         Copy
         <i class="ri-file-copy-line"></i>
@@ -107,7 +108,6 @@
         <i class="ri-arrow-right-down-line"></i>
       </button>
     </div>
-
   </section>
 
   <footer class="bg-black h-[100px] mt-10 flex items-center justify-around">
