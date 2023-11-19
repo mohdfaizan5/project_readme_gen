@@ -1,0 +1,12 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 0px 60px;
+}
+
+@media (min-width: 640px) {
+  body {
+    padding: 0px 120px;
+
+  }
+}
